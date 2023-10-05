@@ -1,0 +1,654 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <!-- <script src="http://120.46.209.92/static/js/jquery.min.js"></script> -->
+    <title>实习岗位</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="icon" href="favicon.ico" type="image/ico">
+    <meta name="keywords" content="2023信工学生实习岗位">
+    <meta name="description" content="2023信工学生实习岗位">
+    <meta name="author" content="tangdi">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/materialdesignicons.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.min.css' %}" rel="stylesheet">
+    <style>
+        textarea {
+            width: 100%;
+            height: auto;
+            resize: vertical;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <!-- 选岗倒计时 -->
+    <!-- <script type="text/javascript">
+
+        $(function () {
+            $.fn.countDown = function (opt) {
+                var opt = $.extend({
+                    time: null,
+                    type: 0
+                }, opt);
+
+                var edtime = new Date(opt.time).getTime(),                  //月份是实际月份-1
+                    edsecond = (edtime - new Date().getTime()) / 1000;
+
+                var eday = $(this).find('.lday'),
+                    ehour = $(this).find('.lhour'),
+                    eminute = $(this).find('.lminute'),
+                    esecond = $(this).find('.lsecond');
+                console.log(ehour)
+                var timer = setInterval(function () {
+                    if (edsecond > 1) {
+                        edsecond -= 1;
+                        
+                        var day = Math.floor((edsecond / 3600) / 24),
+                            hour = Math.floor((edsecond / 3600) % 24),
+                            minute = Math.floor((edsecond / 60) % 60),
+                            second = Math.floor(edsecond % 60);
+                        console.log(hour)
+                        if (opt.type === 0) {
+                            $(eday).text(day);                                  //计算天
+                            $(ehour).text(hour < 10 ? "0" + hour : hour);       //计算小时
+                        } else {
+                            hour = day * 24;
+                            $(ehour).text(hour < 10 ? "0" + hour : hour);       //计算小时-没有天数  
+                        }
+                        $(eminute).text(minute < 10 ? "0" + minute : minute);   //计算分钟
+                        $(esecond).text(second < 10 ? "0" + second : second);   //计算秒杀
+                    } else {
+                        clearInterval(timer);
+                        $(".lasttime").empty().text('选岗时间已结束！')
+                        $("#btn").prop("disabled", true); // 设置按钮属性为 disabled
+                       
+                    }
+                }, 1000);
+            }
+
+            $(".lasttime").countDown({
+                time: "2023/6/14 00:14:00",
+                type: 0
+            });
+        });
+    </script> -->
+    <div class="lyear-layout-web">
+        <div class="lyear-layout-container">
+            <!--左侧导航-->
+            <aside class="lyear-layout-sidebar">
+
+                <!-- logo -->
+                <div id="logo" class="sidebar-header">
+                    <a href="/xgsx"><img src="{% static 'images/logo-sidebar.png' %}" title="洛阳科技职业学院"
+                            alt="洛阳科技职业学院" /></a>
+                </div>
+                <div class="lyear-layout-sidebar-scroll">
+
+                    <nav class="sidebar-main">
+                        <ul class="nav nav-drawer">
+                            <li class="nav-item"> <a href="/xgsx"><i class="mdi mdi-home"></i> 后台首页</a> </li>
+                            <li class="nav-item"> <a href="/xgsx/records"><i
+                                        class="mdi mdi-format-align-justify"></i>选择列表</a> </li>
+                            <li class="nav-item"> <a href="/xgsx/users"><i class="mdi mdi-account"></i>    用户管理</a> </li>    
+                                                
+                        </ul>
+                    </nav>
+                </div>
+
+            </aside>
+            <!--End 左侧导航-->
+
+            <!--头部信息-->
+            <header class="lyear-layout-header">
+
+                <nav class="navbar navbar-default">
+                    <div class="topbar">
+
+                        <div class="topbar-left">
+                            <div class="lyear-aside-toggler">
+                                <span class="lyear-toggler-bar"></span>
+                                <span class="lyear-toggler-bar"></span>
+                                <span class="lyear-toggler-bar"></span>
+                            </div>
+                            <span class="navbar-page-title"> 信息与数字工程学院——实习择岗</span>
+                        </div>
+
+                        <ul class="topbar-right">
+                            <li class="dropdown dropdown-profile">
+                                <a href="/xgsx/login">退出登陆
+                                    <!-- <img class="img-avatar img-avatar-48 m-r-10" src="images/users/avatar.jpg"  {#
+                                        alt="笔下光年" />
+                                     <span>笔下光年 <span class="caret"></span></span> -->
+                                </a>
+                                <!-- <ul class="dropdown-menu dropdown-menu-right">
+                                    <li> <a href="lyear_pages_profile.html"><i class="mdi mdi-account"></i>
+                                           个人信息</a>
+                                        </li>
+                                    <li> <a href="lyear_pages_edit_pwd.html"><i class="mdi mdi-lock-outline"></i>
+                                            修改密码</a> </li>
+                                    <li> <a href="javascript:void(0)"><i class="mdi mdi-delete"></i> 清空缓存</a></li>
+                                    <li class="divider"></li>
+                                    <li> <a href="lyear_pages_login.html"><i class="mdi mdi-logout-variant"></i>
+                                            退出登录</a> </li>
+                                    </ul> -->
+                            </li>
+                            <li class="dropdown dropdown-profile">
+                                <a href="#" id="headname">您好，游客</a>
+                            </li>
+                            <!--切换主题配色-->
+                            <li class="dropdown dropdown-skin">
+                                <span data-toggle="dropdown" class="icon-palette"><i class="mdi mdi-palette"></i></span>
+                                <ul class="dropdown-menu dropdown-menu-right" data-stopPropagation="true">
+                                    <li class="drop-title">
+                                        <p>主题</p>
+                                    </li>
+                                    <li class="drop-skin-li clearfix">
+                                        <span class="inverse">
+                                            <input type="radio" name="site_theme" value="default" id="site_theme_1"
+                                                checked>
+                                            <label for="site_theme_1"></label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="site_theme" value="dark" id="site_theme_2">
+                                            <label for="site_theme_2"></label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="site_theme" value="translucent" id="site_theme_3">
+                                            <label for="site_theme_3"></label>
+                                        </span>
+                                    </li>
+                                    <li class="drop-title">
+                                        <p>LOGO</p>
+                                    </li>
+                                    <li class="drop-skin-li clearfix">
+                                        <span class="inverse">
+                                            <input type="radio" name="logo_bg" value="default" id="logo_bg_1" checked>
+                                            <label for="logo_bg_1"></label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="logo_bg" value="color_2" id="logo_bg_2">
+                                            <label for="logo_bg_2"></label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="logo_bg" value="color_3" id="logo_bg_3">
+                                            <label for="logo_bg_3"></label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="logo_bg" value="color_4" id="logo_bg_4">
+                                            <label for="logo_bg_4"></label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="logo_bg" value="color_5" id="logo_bg_5">
+                                            <label for="logo_bg_5"></label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="logo_bg" value="color_6" id="logo_bg_6">
+                                            <label for="logo_bg_6"></label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="logo_bg" value="color_7" id="logo_bg_7">
+                                            <label for="logo_bg_7"></label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="logo_bg" value="color_8" id="logo_bg_8">
+                                            <label for="logo_bg_8"></label>
+                                        </span>
+                                    </li>
+                                    <li class="drop-title">
+                                        <p>头部</p>
+                                    </li>
+                                    <li class="drop-skin-li clearfix">
+                                        <span class="inverse">
+                                            <input type="radio" name="header_bg" value="default" id="header_bg_1"
+                                                checked>
+                                            <label for="header_bg_1"></label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="header_bg" value="color_2" id="header_bg_2">
+                                            <label for="header_bg_2"></label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="header_bg" value="color_3" id="header_bg_3">
+                                            <label for="header_bg_3"></label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="header_bg" value="color_4" id="header_bg_4">
+                                            <label for="header_bg_4"></label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="header_bg" value="color_5" id="header_bg_5">
+                                            <label for="header_bg_5"></label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="header_bg" value="color_6" id="header_bg_6">
+                                            <label for="header_bg_6"></label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="header_bg" value="color_7" id="header_bg_7">
+                                            <label for="header_bg_7"></label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="header_bg" value="color_8" id="header_bg_8">
+                                            <label for="header_bg_8"></label>
+                                        </span>
+                                    </li>
+                                    <li class="drop-title">
+                                        <p>侧边栏</p>
+                                    </li>
+                                    <li class="drop-skin-li clearfix">
+                                        <span class="inverse">
+                                            <input type="radio" name="sidebar_bg" value="default" id="sidebar_bg_1"
+                                                checked>
+                                            <label for="sidebar_bg_1"></label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="sidebar_bg" value="color_2" id="sidebar_bg_2">
+                                            <label for="sidebar_bg_2"></label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="sidebar_bg" value="color_3" id="sidebar_bg_3">
+                                            <label for="sidebar_bg_3"></label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="sidebar_bg" value="color_4" id="sidebar_bg_4">
+                                            <label for="sidebar_bg_4"></label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="sidebar_bg" value="color_5" id="sidebar_bg_5">
+                                            <label for="sidebar_bg_5"></label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="sidebar_bg" value="color_6" id="sidebar_bg_6">
+                                            <label for="sidebar_bg_6"></label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="sidebar_bg" value="color_7" id="sidebar_bg_7">
+                                            <label for="sidebar_bg_7"></label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" name="sidebar_bg" value="color_8" id="sidebar_bg_8">
+                                            <label for="sidebar_bg_8"></label>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!--切换主题配色-->
+                        </ul>
+
+                    </div>
+                </nav>
+
+            </header>
+            <!--End 头部信息-->
+
+            <!--页面主要内容-->
+            <main class="lyear-layout-content">
+
+                <div class="container-fluid">
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>每位同学只有一次报名机会，请谨慎选择！</h4>
+                                </div>
+
+
+                                <div class="card-body">
+
+                                    <form class="form-horizontal" action="#" method="post" enctype="multipart/form-data"
+                                        onsubmit="return false;">
+                                        {% csrf_token %}
+                                        <!-- 选岗倒计时 标签 -->
+                                        <!-- <div class="form-group">
+                                            <div class="col-xs-12">
+                                                <div class="lasttime">
+                                                    选岗时间还剩下: <span class="lday">0</span> 天 <span class="lhour">00</span> 小时 <span class="lminute"> 00 </span> 分 <span class="lsecond">00</span> 秒结束
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        <div class="form-group">
+                                            <label class="col-xs-12" for="example-email-input">学号</label>
+                                            <div class="col-xs-12">
+                                                <input class="form-control" type="text" id="sid" placeholder="请输入学号"
+                                                    readonly="readonly">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-xs-12" for="example-password-input">姓名</label>
+                                            <div class="col-xs-12">
+                                                <input class="form-control" type="text" id="sname" placeholder="请输入姓名"
+                                                    readonly="readonly">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-xs-12" for="example-password-input">班级</label>
+                                            <div class="col-xs-12">
+                                                <input class="form-control" type="text" id="clazz_name"
+                                                    placeholder="请输入班级" readonly="readonly">
+                                                <input class="form-control" type="hidden" id="clazz" placeholder="请输入班级"
+                                                    readonly="readonly">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-xs-12" for="example-password-input">性别</label>
+                                            <div class="col-xs-12">
+                                                <input class="form-control" type="text" id="gender" placeholder="请输入姓名"
+                                                    readonly="readonly">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-xs-12" for="example-password-input">电话</label>
+                                            <div class="col-xs-12">
+                                                <input class="form-control" type="text" id="mobile"
+                                                    placeholder="请输入11位手机号">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-xs-12" for="example-select">请选择公司</label>
+                                            <div class="col-xs-12">
+                                                <select class="form-control" id="company" size="1">
+                                                    <option value="">请选择公司</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-xs-12" for="example-select">请选择岗位</label>
+                                            <div class="col-xs-12">
+                                                <select class="form-control" id="job" size="1">
+                                                    <option value="">请选择岗位</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-xs-12">
+                                                <button class="btn btn-primary" id="btn" type="submit">提交</button>
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>岗位列表</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="table-responsive table-hover">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <td>id</td>
+                                                    <td>公司名称</td>
+                                                    <td>岗位名称</td>
+                                                    <td>计划招聘数量</td>
+                                                    <td>剩余数量</td>
+                                                    <td>岗位介绍</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="joblist">
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <!--End 页面主要内容-->
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script>
+        var token = localStorage.getItem('token')
+        if (!token) {
+            // 跳转到其他页面
+            window.location.href = '/xgsx/login';
+        }
+        var uid = localStorage.getItem('uid')
+        var name = localStorage.getItem('name')
+        var gender = localStorage.getItem('gender')
+        var clazz = localStorage.getItem('clazz')  // 班级ID
+
+        $(function () {
+            $('#sid').val(uid)
+            $('#sname').val(name)
+            $('#headname').text('您好, ' + name)
+            if (gender == 'A') {
+                $('#gender').val('男')
+            } else if (gender == 'B') {
+                $('#gender').val('女')
+            }
+        })
+
+    </script>
+
+    <!-- 打印job列表 -->
+    <script>
+        $(function () {
+            setTimeout(function () { }, 1000);
+            $.ajax({
+                url: '/xgsx/joblist',
+                type: 'get',
+                dataType: 'json',
+                // headers:{
+                //     'Authorization': token,
+                // },
+                data: { 'token': token },
+                success: function (response) {
+                    console.log(response)
+                    job_list = response.results
+                    $("#joblist").empty();
+                    var str = "";
+                    for (var i = 0; i < job_list.length; i++) {
+                        var jobId = job_list[i].id;
+                        str += "" +
+                            "<tr><th scope='row'>" + job_list[i].id +
+                            "</th><td>" + job_list[i].company.cname +
+                            "</td><td>" + job_list[i].jname +
+                            "</td><td>" + job_list[i].total_number +
+                            "</td><td>" + job_list[i].still_number +
+                            "</td><td>" + "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#myModal-" + jobId + "'>查看详情</button>"
+                            +
+                            "<div class='modal fade bs-example-modal-lg' id='myModal-" + jobId + "' tabindex='-1' role='dialog' aria-labelledby='myLargeModalLabel' style='display: none;'>" +
+                            "<div class='modal-dialog modal-lg' role='document'>" +
+                            "<div class='modal-content'>" +
+                            "<div class='modal-header'>" +
+                            "<button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>×</span></button>" +
+                            "<h4 class='modal-title' id='myLargeModalLabel'>岗位简介</h4>" +
+                            "</div>" +
+                            "<div class='modal-body'>" +
+                            "<textarea  cols='41' rows='20' readonly='readonly'>" + job_list[i].des + "</textarea>"
+                            +
+                            "</div>" +
+                            "<div class='modal-footer'>" +
+                            "<button type='button' class='btn btn-default' data-dismiss='modal'>关闭</button>" +
+
+                            "</div></div></div></div>" +
+                            "</td></tr>"
+                    };
+                    $("#joblist").show().append(str);
+                },
+                error: function () {
+                    alert('请重新登陆！')
+                    window.location.href = '/xgsx/login';
+                }
+            })
+        })
+
+    </script>
+
+    <!-- 获取班级名API -->
+    <script>
+        $(function () {
+
+            $.ajax({
+
+                url: '/xgsx/getclazz',
+                type: 'get',
+                dataType: 'json',
+                data: { 'token': token },
+                success: function (response) {
+                    data = response.results
+                    for (var i = 0, len = data.length; i < len; i++) {
+                        if (clazz == data[i][0]) {
+                            $("#clazz_name").val(data[i][1]);
+                            $("#clazz").val(data[i][0]);
+                        }
+                        // $new = $("<option value=" + data[i][0] + ">" + data[i][1] + "</option>");
+                        // $("#clazz").append($new);
+                    }
+                },
+                error: function () {
+                    console.log('数据请求失败')
+                    // 跳转到其他页面
+
+
+                }
+            })
+        })
+
+    </script>
+
+    <!-- 获取公司和岗位API -->
+    <script>
+        $(function () {
+
+            $.ajax({
+                // 1.指定朝哪个后端发送ajax请求
+                url: '/xgsx/getcompany', //不写就是朝当前地址提交【与form表单的action参数相同】
+                // 2.请求方式
+                type: 'get',  // 不指定默认就是get，都是小写
+                dataType: 'json',
+                data: { 'token': token },
+                // 3.数据
+                // data:{'num1':$('#d1').val(), 'num2':$('#d2').val(),'csrfmiddlewaretoken': csrf},
+                // 4.回调函数:当后端给你返回结果的时候会自动触发，args接受后端的返回结果
+                success: function (response) {
+                    data = response.results
+                    for (var i = 0, len = data.length; i < len; i++) {
+                        $new = $("<option value=" + data[i][0] + ">" + data[i][1] + "</option>");
+                        $("#company").append($new);
+
+                    }
+                },
+                error: function () {
+                    console.log('数据请求失败')
+                }
+            })
+        })
+
+        //改变公司后
+        $("#company").change(function () {
+            //清空市和区
+            $("#job").empty().append('<option value="">请选择岗位</option>');
+            $.ajax({
+                url: '/xgsx/getjob',
+                type: 'get',
+                data: {
+                    "search": $(this).val(),
+                    'token': token
+                }
+            }).done(function (response) {
+                data = response.results
+                for (var i = 0, len = data.length; i < len; i++) {
+                    $new = $("<option value=" + data[i][0] + ">" + data[i][1] + "</option>");
+                    $("#job").append($new);
+                }
+            });
+        });
+
+    </script>
+
+    <!-- 提交表单 -->
+    <script>
+        $('#btn').click(function () {
+            var randomDelay = Math.floor(Math.random() * 600) + 600; // 生成1000到6000之间的随机数
+            setTimeout(function () {
+                if (confirm('你已经选择岗位，是否提交')) {
+                    // 用户选择了确定，继续执行代码
+                    // 在这里放置你要执行的代码
+                    var randomDelay = Math.floor(Math.random() * 800) + 1000; // 生成1000到6000之间的随机数
+                    setTimeout(function () {
+                        var csrf = $('input[name="csrfmiddlewaretoken"]').val();
+                        $.ajax({
+                            url: '/xgsx/job_record/add',
+                            type: 'post',
+                            dataType: 'json',
+                            data: {
+                                'token': token,
+                                'sid': $('#sid').val(),
+                                'sname': $('#sname').val(),
+                                'clazz': $('#clazz').val(),
+                                'company': $('#company').val(),
+                                'job': $('#job').val(),
+                                'mobile': $('#mobile').val(),
+                                'csrfmiddlewaretoken': csrf
+                            },
+
+                            success: function (args) {
+                                alert($('#sname').val() + '报名成功')
+                                // console.log(args)
+                                location.reload()
+                                // $('#d3').val(args)
+                            },
+                            error: function (response) {
+                                err_msg = response.responseJSON
+                                if (err_msg.sid) {
+                                    alert('请不要重复报名')
+                                }
+                                else if (err_msg.mobile) {
+                                    alert('请填写11位正确手机号')
+                                } else if (err_msg.job) {
+                                    alert('请选择一个岗位')
+                                } else if (err_msg.error) {
+                                    alert('岗位已选择完，请选择其他岗位')
+                                }
+
+
+                                // alert('请不要重复提交')
+
+                            }
+
+                        })
+
+                    }, randomDelay);
+
+                } else {
+                    // 用户选择了取消，不执行代码
+                }
+            }, randomDelay);
+        })
+    </script>
+
+
+    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/perfect-scrollbar.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/main.min.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>臻言谷</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .clock {
+            width: 200px;
+            height: 200px;
+            border: 10px solid lightgray;
+            margin: 0 auto;
+            border-radius: 50%;
+            box-shadow: 5px 5px 5px lightgray;
+            background-color: #fff;
+            position: relative
+        }
+        .clock p {
+            width: 200px;
+            height: 20px;
+            /* background-color: pink; */
+            line-height: 20px;
+            position: absolute;
+            top: 90px;
+        }
+        .clock p span {
+            display: block;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            /* background-color: gold; */
+        }
+        #hour {
+            position: absolute;
+            transform-origin: center bottom;
+            width: 6px;
+            height: 50px;
+            background-color: tomato;
+            left: 97px;
+            top: 50px;
+        }
+        #minute {
+            position: absolute;
+            transform-origin: center bottom;
+            width: 4px;
+            height: 70px;
+            background-color: deepskyblue;
+            left: 98px;
+            top: 30px;
+        }
+        #second {
+            position: absolute;
+            transform-origin: center bottom;
+            width: 2px;
+            height: 90px;
+            background-color: hotpink;
+            left: 99px;
+            top: 10px;
+        }
+        body{
+            background-image: url("https://img2.baidu.com/it/u=2098001132,4205281083&fm=253&fmt=auto&app=138&f=JPEG?w=650&h=406");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        h1,h2{
+            position: relative;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h1>臻言之谷</h1>
+<h2>看看现在的时间</h2>
+{#<h2>{% url "class01_cities" %}</h2>#}
+<h2></h2>
+<a href=""></a>
+    <div class="clock">
+        <p><span>1</span></p>
+        <p><span>2</span></p>
+        <p><span>3</span></p>
+        <p><span>4</span></p>
+        <p><span>5</span></p>
+        <p><span>6</span></p>
+        <p><span>7</span></p>
+        <p><span>8</span></p>
+        <p><span>9</span></p>
+        <p><span>10</span></p>
+        <p><span>11</span></p>
+        <p><span>12</span></p>
+        <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="second"></div>
+    </div>
+</body>
+<script>
+    // 获取数字
+    var ps = document.getElementsByTagName("p");
+    // 获取三个指针
+    var dHour = document.getElementById("hour");
+    var dMinute = document.getElementById("minute");
+    var dSecond = document.getElementById("second");
+    //定时器
+    var timer = null;
+
+
+    // 设置数字的位置
+    function setNums() {
+        for (var i=0; i<ps.length; i++) {
+            // ps[i].style.transform = `rotate(${120 + i*30}deg)`;
+            ps[i].style.transform = 'rotate(' + (120 + i*30) + 'deg)';
+            // 获取p下边的span标签
+            var span = ps[i].getElementsByTagName("span")[0];
+            span.style.transform = 'rotate(' + ((120 + i*30)*-1) + 'deg)';
+        }
+    }
+    setNums();
+
+    // 开启定时器
+    timer = setInterval(function() {
+        changeZhen();
+    }, 1000)
+
+    function changeZhen() {
+        // 获取时间戳
+        var date = new Date();
+        var s = date.getSeconds();
+        var m = date.getMinutes() + s/60;
+        var h = date.getHours() + m/60;
+
+        dSecond.style.transform = `rotate(${s * 6}deg)`;
+        dMinute.style.transform = `rotate(${m * 6}deg)`;
+        dHour.style.transform = `rotate(${h * 30}deg)`;
+    }
+</script>
+</html>

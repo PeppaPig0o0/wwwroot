@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <!-- <script src="http://120.46.209.92/static/js/jquery.min.js"></script> -->
+
+    <title>实习报名记录</title>
+</head>
+
+<body>
+    <table border="1" align="center">
+        <thead>
+            <tr>
+                <td>id</td>
+                <td>学号</td>
+                <td>姓名</td>
+                <td>班级</td>
+                <td>报名企业</td>
+                <td>报名岗位</td>
+                <td>报名时间</td>
+                <td>上一次更新时间</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+
+
+    <script>
+        function reord_list() {
+            $.ajax({
+                url: '/job/record',
+                type: 'get',
+                dataType: 'json',
+                success: function (response) {
+                    reord_list = response.results
+                    $("#tbody").empty();
+                    var str = "";
+                    for (var i = 0; i < reord_list.length; i++) {
+                        str += "<tr><td>" +
+                            reord_list[i].id + "</td><td>" +
+                            reord_list[i].sid + "</td><td>" +
+                            reord_list[i].sname + "</td><td>" +
+                            reord_list[i].clazz_detail.clazz + "</td><td>" +
+                            reord_list[i].company_detail.cname + "</td><td>" +
+                            reord_list[i].job_detail.jname + "</td><td>" +
+                            reord_list[i].create_time + "</td><td>" +
+                            reord_list[i].update_time + "</td><td>" +
+                            " <button  class='but'  value='" + reord_list[i].id + "'>删除</button></td><tr>"
+                    }
+                    $("#tbody").show().append(str);
+                },
+                error: function () {
+                    alert('数据请求失败');
+                }
+            })
+        }
+
+
+    </script>
+
+
+    <script>
+        var password = prompt("请输入密码:");
+
+        if (password === "123456000") {
+            alert("密码正确");
+            $(reord_list())
+        } else {
+            alert("密码错误");
+        }
+
+    </script>
+
+    <!-- 删除一条数据 -->
+    <script>
+            $(document).on('click', '.but',function(){
+                $.ajax({
+                    url: '/job/record/' + $(this).val(),
+                    type: 'delete',
+                    dataType: 'json',
+                    success: function (response) {
+                        console.log('删除成功')
+                    },
+                    error: function () {
+                        alert('数据请求失败');
+                    }
+                })
+                $(this).closest("tr").remove();
+            });
+
+
+    </script>
+</body>
+
+</html>

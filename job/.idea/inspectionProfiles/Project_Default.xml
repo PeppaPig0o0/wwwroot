@@ -1,0 +1,168 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="CheckEmptyScriptTag" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Open Files" level="TYPO" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="CheckImageSize" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Open Files" level="TYPO" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="CheckValidXmlInScriptTagBody" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Open Files" level="TYPO" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="CssBrowserCompatibilityForProperties" enabled="false" level="TYPO" enabled_by_default="false" editorAttributes="TYPO" />
+    <inspection_tool class="CssConvertColorToHexInspection" enabled="false" level="TYPO" enabled_by_default="false" editorAttributes="TYPO" />
+    <inspection_tool class="CssConvertColorToRgbInspection" enabled="false" level="TYPO" enabled_by_default="false" editorAttributes="TYPO" />
+    <inspection_tool class="CssInvalidAtRule" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="CssInvalidCharsetRule" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="CssInvalidFunction" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="CssInvalidHtmlTagReference" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="CssInvalidImport" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="CssInvalidMediaFeature" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="CssInvalidPropertyValue" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="CssInvalidPseudoSelector" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="CssMissingComma" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="CssMissingSemicolon" enabled="false" level="TYPO" enabled_by_default="false" editorAttributes="TYPO" />
+    <inspection_tool class="CssNegativeValue" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="CssNoGenericFontName" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="CssNonIntegerLengthInPixels" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="CssOverwrittenProperties" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="CssRedundantUnit" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="CssReplaceWithShorthandSafely" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="CssReplaceWithShorthandUnsafely" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="CssUnknownProperty" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <option name="myCustomPropertiesEnabled" value="false" />
+      <option name="myIgnoreVendorSpecificProperties" value="false" />
+      <option name="myCustomPropertiesList">
+        <value>
+          <list size="0" />
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="CssUnknownTarget" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="CssUnresolvedClassInComposesRule" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="CssUnresolvedCustomProperty" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="CssUnusedSymbol" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="DjangoBrokenLineCommentInspection" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="DjangoCloseTagInspection" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="DjangoIncompatibleInspection" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="DjangoOrmInspection" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="DjangoRelationInspection" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="DjangoUnresolvedFilterInspection" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="DjangoUnresolvedLoadInspection" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="DjangoUnresolvedStaticReferenceInspection" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="DjangoUnresolvedTagInspection" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="DjangoUnresolvedTemplateReferenceInspection" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="DjangoUnresolvedUrlInspection" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="DjangoUrlArgumentsInspection" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="DuplicatedBlockNamesInspection" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="DuplicatedCode" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <Languages>
+        <language minSize="80" name="Python" />
+      </Languages>
+    </inspection_tool>
+    <inspection_tool class="EndBlockNamesInspection" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="ExtendsTagPositionInspection" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO" />
+    <inspection_tool class="HtmlDeprecatedAttribute" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Open Files" level="TYPO" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlDeprecatedTag" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Open Files" level="TYPO" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlExtraClosingTag" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Open Files" level="TYPO" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlFormInputWithoutLabel" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Open Files" level="TYPO" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlMissingClosingTag" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Open Files" level="TYPO" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlNonExistentInternetResource" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Open Files" level="TYPO" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlPresentationalElement" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Open Files" level="TYPO" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlRequiredAltAttribute" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Open Files" level="TYPO" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlRequiredLangAttribute" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Open Files" level="TYPO" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlRequiredSummaryAttribute" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Open Files" level="TYPO" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlRequiredTitleAttribute" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Open Files" level="TYPO" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlRequiredTitleElement" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Open Files" level="TYPO" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownAnchorTarget" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Open Files" level="TYPO" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Open Files" level="TYPO" enabled="true">
+        <option name="myValues">
+          <value>
+            <list size="0" />
+          </value>
+        </option>
+        <option name="myCustomValuesEnabled" value="true" />
+      </scope>
+      <option name="myValues">
+        <value>
+          <list size="0" />
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownBooleanAttribute" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Open Files" level="TYPO" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Open Files" level="TYPO" enabled="true">
+        <option name="myValues">
+          <value>
+            <list size="6">
+              <item index="0" class="java.lang.String" itemvalue="nobr" />
+              <item index="1" class="java.lang.String" itemvalue="noembed" />
+              <item index="2" class="java.lang.String" itemvalue="comment" />
+              <item index="3" class="java.lang.String" itemvalue="noscript" />
+              <item index="4" class="java.lang.String" itemvalue="embed" />
+              <item index="5" class="java.lang.String" itemvalue="script" />
+            </list>
+          </value>
+        </option>
+        <option name="myCustomValuesEnabled" value="true" />
+      </scope>
+      <option name="myValues">
+        <value>
+          <list size="6">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownTarget" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Open Files" level="TYPO" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlWrongAttributeValue" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Open Files" level="TYPO" enabled="true" />
+    </inspection_tool>
+    <inspection_tool class="RequiredAttributes" enabled="true" level="TYPO" enabled_by_default="true" editorAttributes="TYPO">
+      <scope name="Open Files" level="TYPO" enabled="true">
+        <option name="myAdditionalRequiredHtmlAttributes" value="" />
+      </scope>
+      <option name="myAdditionalRequiredHtmlAttributes" value="" />
+    </inspection_tool>
+    <inspection_tool class="Stylelint" enabled="false" level="TYPO" enabled_by_default="false" editorAttributes="TYPO" />
+  </profile>
+</component>

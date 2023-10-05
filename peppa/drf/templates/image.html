@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片</title>
+    <style>
+        a{
+            text-decoration: none;
+            width: 200px;
+            display: block;
+
+        }
+        div{
+            width: 1800px;
+        }
+    </style>
+</head>
+<body>
+<div><form method="POST" enctype="multipart/form-data" action="upload_image">
+    {% csrf_token %}
+    <input type="file" name="file" required>
+    <button type="submit">上传</button>
+</form>
+</div>
+
+
+    <table border="1">
+        <tr>
+          <th>图片</th>
+          <th>操作</th>
+        </tr>
+        {% for image in images %}
+        <tr>
+          <td><a href="{% static 'image/' %}{{ image }}" target="_blank" style="width: 800px">{{ image }}</a></td>
+          <td><a href="{% url 'drf:delete_image' image %}">删除</a></td>
+        </tr>
+        {% endfor %}
+      </table>
+
+
+</body>
+
+
+</html>
+
