@@ -112,9 +112,9 @@ DATABASES = {
         "ENGINE": "django.db.backends.mysql",
         "NAME": 'job',
         'USER': 'root',
-        'PASSWORD': 'Dadishen0022.',
+        'PASSWORD': '007741ak',
         # 'HOST': '127.0.0.1',  # 127.0.0.1
-        'HOST': '120.46.209.92',  # 127.0.0.1
+        'HOST': '123.60.79.108',  # 127.0.0.1
         'PORT': 3306
     }
 }
@@ -124,7 +124,7 @@ CACHES = {
         # 应用 django-redis 库的 RedisCache 缓存类
         "BACKEND": "django_redis.cache.RedisCache",
         # 配置正确的 ip和port
-        "LOCATION": "redis://:007741ak@localhost:6379/2",
+        "LOCATION": "redis://:007741ak@123.60.79.108:6379/2",
         "OPTIONS": {
             # redis客户端类
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
@@ -133,7 +133,7 @@ CACHES = {
                 "max_connections": 100
             }
             # 如果 redis 设置了密码，那么这里需要设置对应的密码，如果redis没有设置密码，那么这里也不设置
-            # "PASSWORD": "123456",
+            # "PASSWORD": "007741ak",
         }
     }
 }
