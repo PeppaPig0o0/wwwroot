@@ -18,18 +18,18 @@ from django.contrib.auth.models import User
 def index(request):
     # uname = request.session.get('uname')
     # if uname=='111':
-    #     return render(request, 'index.html', {'uname':uname})
+    #     return render(request, 'index-old.html', {'uname':uname})
     return render(request, 'index.html')
 def a(request):
     # uname = request.session.get('uname')
     # if uname=='111':
-    #     return render(request, 'index.html', {'uname':uname})
+    #     return render(request, 'index-old.html', {'uname':uname})
     return render(request, 'a.html')
 
 # def index(request):
 #     uname = request.session.get('uname')
 #     if uname=='111':
-#         return render(request, 'index.html', {'uname':uname})
+#         return render(request, 'index-old.html', {'uname':uname})
 #     return redirect('login')
 
 
